@@ -2,44 +2,44 @@
 
 <h2>Contexte et problématique du projet</h2>
 
-Vous êtes Data Scientist dans une très jeune start-up de l'AgriTech, nommée  "Fruits!", qui cherche à proposer des solutions innovantes pour la récolte des fruits.
+Vous êtes Data Scientist dans une start-up de la EdTech, nommée academy, qui propose des contenus de formation en ligne pour un public de niveau lycée et université.
 
-La volonté de l’entreprise est de préserver la biodiversité des fruits en permettant des traitements spécifiques pour chaque espèce de fruits en développant des robots cueilleurs intelligents.
+Mark, votre manager, vous a convié à une réunion pour vous présenter le projet d’expansion à l’international de l’entreprise. Il vous confie une première mission d’analyse exploratoire, pour déterminer si les données sur l’éducation de la banque mondiale permettent d’informer le projet d’expansion.
 
-Votre start-up souhaite dans un premier temps se faire connaître en mettant à disposition du grand public une application mobile qui permettrait aux utilisateurs de prendre en photo un fruit et d'obtenir des informations sur ce fruit.
+Voici les différentes questions que Mark aimerait explorer, que vous avez notées durant la réunion :
 
-Pour la start-up, cette application permettrait de sensibiliser le grand public à la biodiversité des fruits et de mettre en place une première version du moteur de classification des images de fruits.
-
-De plus, le développement de l’application mobile permettra de construire une première version de l'architecture Big Data nécessaire.
-
-Votre collègue Paul vous indique l’existence d’un document, formalisé par un alternant qui vient de quitter l’entreprise. Il a testé une première approche dans un environnement Big Data AWS EMR, à partir d’un jeu de données constitué des images de fruits et des labels associés (en téléchargement direct à ce lien). Le notebook réalisé par l’alternant servira de point de départ pour construire une partie de la chaîne de traitement des données.
+Quels sont les pays avec un fort potentiel de clients pour nos services ?
+Pour chacun de ces pays, quelle sera l’évolution de ce potentiel de clients ?
+Dans quels pays l'entreprise doit-elle opérer en priorité ?
 
 <h2>But et intérêt du projet</h2>
 
-Vous êtes donc chargé de vous approprier les travaux réalisés par l’alternant et de compléter la chaîne de traitement.
+VMark vous a donc demandé de réaliser une analyse pré-exploratoire de ce jeu de données. Il vous a transmis cet email à la suite de la réunion :
 
-Il n’est pas nécessaire d’entraîner un modèle pour le moment.
+Hello,
 
-L’important est de mettre en place les premières briques de traitement qui serviront lorsqu’il faudra passer à l’échelle en termes de volume de données !
+Les données de la Banque mondiale sont disponibles à l’adresse suivante :
 
-Contraintes
-Lors de son brief initial, Paul vous a averti des points suivants :
+https://datacatalog.worldbank.org/dataset/education-statistics
 
-- Vous devrez tenir compte dans vos développements du fait que le volume de données va augmenter très rapidement après la livraison de ce projet. Vous continuerez donc à développer des scripts en Pyspark et à utiliser le cloud AWS pour profiter d’une architecture Big Data (EMR, S3, IAM). Si vous préférez, vous pourrez transférer les traitements dans un environnement Databricks
-- Vous devez faire une démonstration de la mise en place d’une instance EMR opérationnelle, ainsi qu’ expliquer pas à pas le script PySpark, que vous aurez complété : 
-d’un traitement de diffusion des poids du modèle Tensorflow sur les clusters (broadcast des “weights” du modèle) qui avait été oublié par l’alternant. Vous pourrez vous appuyer sur l’article “Distributed model inference using TensorFlow Keras” disponible dans les ressources
-d’une étape de réduction de dimension de type PCA en PySpark 
-- Vous respecterez les contraintes du RGPD : dans notre contexte, vous veillerez à paramétrer votre installation afin d’utiliser des serveurs situés sur le territoire européen 
-- Votre retour critique de cette solution sera également précieuse, avant de décider de la généraliser
-- La mise en œuvre d’une architecture Big Data de type EMR engendrera des coûts. Vous veillerez donc à ne maintenir l’instance EMR opérationnelle que pour les tests et les démos.
-C- e coût, qui devrait rester inférieur à 10 euros pour une utilisation raisonnée, reste à votre charge. L’utilisation d’un serveur local pour la mise à jour du Script PySpark, en limitant l’utilisation du serveur EMR à l’implémentation et aux tests, permet de réduire sensiblement ce coût.
+Ou en téléchargement direct à ce lien.
+
+Je te laisse regarder la page d'accueil qui décrit le jeu de données. En résumé, l’organisme “EdStats All Indicator Query” de la Banque mondiale répertorie 4000 indicateurs internationaux décrivant l’accès à l’éducation, l’obtention de diplômes et des informations relatives aux professeurs, aux dépenses liées à l’éducation... Tu trouveras plus d'info sur ce site :
+
+http://datatopics.worldbank.org/education/
+
+Pour la pré-analyse, pourrais-tu :
+
+Valider la qualité de ce jeu de données (comporte-t-il beaucoup de données manquantes, dupliquées ?)
+Décrire les informations contenues dans le jeu de données (nombre de colonnes ? nombre de lignes ?)
+Sélectionner les informations qui semblent pertinentes pour répondre à la problématique (quelles sont les colonnes contenant des informations qui peuvent être utiles pour répondre à la problématique de l’entreprise ?)
+Déterminer des ordres de grandeurs des indicateurs statistiques classiques pour les différentes zones géographiques et pays du monde (moyenne/médiane/écart-type par pays et par continent ou bloc géographique)
+Ton travail va nous permettre de déterminer si ce jeu de données peut informer les décisions d'ouverture vers de nouveaux pays. On va partager ton analyse avec le board, alors merci de soigner la présentation et de l'illustrer avec des graphiques pertinents et lisibles !
 
 <h2>Compétences évaluées</h2>
 
-Un notebook sur le cloud contenant les scripts en Pyspark exécutables (le preprocessing et une étape de réduction de dimension de type PCA).
-Les images du jeu de données initial ainsi que la sortie de la réduction de dimension (une matrice écrite sur un fichier CSV ou autre) disponible dans un espace de stockage sur le cloud.
-Un support de présentation pour la soutenance, présentant :
-les différentes briques d'architecture choisies sur le cloud ;
-leur rôle dans l’architecture Big Data ;
-la démarche de mise en oeuvre de l’environnement Big Data (EMR ou Databricks)
-les étapes de la chaîne de traitement PySpark.
+- Mettre en place un environnement Python
+- Effectuer une représentation graphique à l'aide d'une librairie Python adaptée
+- Manipuler des données avec des librairies Python spécialisées
+- Maîtriser les opérations fondamentales du langage Python pour la Data Science
+- Utiliser un notebook Jupyter pour faciliter la rédaction du code et la collaboration
